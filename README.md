@@ -1,6 +1,6 @@
-# NetCount Reset (Rust Implementation)
+# NetFlush
 
-This is a high-performance, safe implementation of the NetCount Reset utility written in Rust. It interacts directly with the Windows API to manage Network Profile registry keys, eliminating the overhead of batch scripts and external process spawning.
+Reset Windows “Network” profile numbering by removing old network profile entries from the registry, so you stop seeing names like “Network 2”, “Network 3”, etc. The next time Windows creates a profile, it will start back at “Network”.
 
 ## Features
 
@@ -23,7 +23,7 @@ Get it from [rustup.rs](https://rustup.rs/).
 ```
 
 3. The compiled executable will be located at:
-    `target\release\netcount-reset.exe`
+   `target\release\netflush.exe`
 
 ## Usage
 
@@ -33,10 +33,10 @@ Run as **Administrator**. This mode will show progress and pause if an error occ
 
 ```powershell
 # Default (searches for "Network")
-netcount-reset.exe
+netflush.exe
 
 # Custom Profile Name
-netcount-reset.exe "MyWifi"
+netflush.exe "MyWifi"
 ```
 
 ### 2. Background Mode (Task Scheduler)
@@ -45,15 +45,15 @@ Use the `--background` or `-b` flag. This mode suppresses standard output and **
 
 ```powershell
 # Run silently for "Network" profiles
-netcount-reset.exe --background
+netflush.exe --background
 
 # Run silently for custom profiles
-netcount-reset.exe "MyWifi" --background
+netflush.exe "MyWifi" --background
 ```
 
 ## Task Scheduler Configuration
 
 When setting up the Windows Task Scheduler action:
 
-- **Program/script:** Path to `netcount-reset.exe`
+- **Program/script:** Path to `netflush.exe`
 - **Add arguments (optional):** `--background`
