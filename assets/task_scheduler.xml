@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-16"?>
-<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+<?xml version="1.0" encoding="UTF-16" ?>
+<Task
+    version="1.4"
+    xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"
+>
   <RegistrationInfo>
     <Date>2025-08-17T17:44:31.5833845</Date>
     <Author>THINKBOOK\NChalapinyo</Author>
-    <Description>Network Profile Counter Reset</Description>
-    <URI>\NChalapinyo\NetCount Reset</URI>
+    <Description
+        >Reset Windows “Network” profile numbering by removing old network profile entries from the registry, so you stop seeing names like “Network 2”, “Network 3”, etc.</Description>
+    <URI>\NChalapinyo\NetFlush</URI>
   </RegistrationInfo>
   <Triggers />
   <Principals>
     <Principal id="Author">
-      <UserId>S-1-5-21-1694797827-2544001971-2943170850-1001</UserId>
+      <UserId>S-1-5-21-3488437227-996376721-4155997512-1001</UserId>
       <LogonType>InteractiveToken</LogonType>
       <RunLevel>HighestAvailable</RunLevel>
     </Principal>
@@ -37,7 +41,8 @@
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>"C:\Program Files\NChalapinyo\NetCount Reset.cmd"</Command>
+      <Command>"C:\Program Files\NChalapinyo\netflush-release.exe"</Command>
+      <Arguments>--background</Arguments>
     </Exec>
   </Actions>
 </Task>
