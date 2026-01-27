@@ -19,11 +19,10 @@ Get it from [rustup.rs](https://rustup.rs/).
 2. Run the build command:
 
 ```powershell
-    cargo build --release
+cargo build --release
 ```
 
-3. The compiled executable will be located at:
-   `target\release\netflush.exe`
+3. The compiled executable will be located at: `target\release\netflush.exe`
 
 ## Usage
 
