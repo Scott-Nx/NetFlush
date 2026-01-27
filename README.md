@@ -15,14 +15,29 @@ Get it from [rustup.rs](https://rustup.rs/).
 
 ## Build Instructions
 
-1. Open a terminal in this directory (`rust/`).
+1. Open a terminal in the project root.
 2. Run the build command:
 
-```powershell
-cargo build --release
-```
+   **Standard Windows (MSVC):**
 
-3. The compiled executable will be located at: `target\release\netflush.exe`
+   ```powershell
+   cargo build --release
+   ```
+
+   **Cross-compile / GNU Target:**
+   If you are compiling from Linux or prefer the GNU toolchain:
+
+   ```bash
+   # Add the target (once)
+   rustup target add x86_64-pc-windows-gnu
+
+   # Build
+   cargo build --release --target x86_64-pc-windows-gnu
+   ```
+
+3. The compiled executable will be located at:
+   - Standard: `target\release\netflush.exe`
+   - GNU: `target\x86_64-pc-windows-gnu\release\netflush.exe`
 
 ## Usage
 
