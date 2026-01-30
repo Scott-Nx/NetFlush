@@ -17,6 +17,8 @@ opt-level = 3
 strip = true
 lto = true
 codegen-units = 1
+panic = "abort"
 
 [dependencies]
 winreg = "0.55"
+
